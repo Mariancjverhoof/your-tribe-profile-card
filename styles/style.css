@@ -15,7 +15,7 @@ html {
 /* In de <body> wordt de inhoud met "display: flex" in het midden geplaats. */
 /* En krijgt de <body> en alle inhoud een font en kleur. */
 body {
-  background-image: url(/assets/hyrule-grass.gif);
+  background-image: url(./assets/hyrule-grass.gif);
   background-size: 100% auto;
   display: flex;
   justify-content: center;
@@ -270,12 +270,12 @@ body.is-expanded img {
   width: 15em;
 }
 
-/*.link1 {
+.link1 {
   position: absolute;
   margin-left: -50%;
   margin-top: 60%;
   width: 30%;
-} */
+} 
 
 /*.botwlink {
 position: absolute;
