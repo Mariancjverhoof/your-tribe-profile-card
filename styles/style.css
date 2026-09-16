@@ -15,15 +15,19 @@ html {
 /* In de <body> wordt de inhoud met "display: flex" in het midden geplaats. */
 /* En krijgt de <body> en alle inhoud een font en kleur. */
 body {
+  background-image: url(/assets/hyrule-grass.gif);
+  background-size: 100% auto;
   display: flex;
   justify-content: center;
   align-items: center;
   
   height: 100vh;
   
-  font-family: open sans;
-  color: #10214e; /* de tekst kleur wordt in hex kleuren bepaald. */
+  font-family: "Gill Sans";
+  color: #422661; /* de tekst kleur wordt in hex kleuren bepaald. */
+  margin: 0;
 }
+
 
 /* ARTICLE */
 /* Het <article> element krijgt hier de styling. */
@@ -43,9 +47,9 @@ article {
   min-width: 20em;
   
   border-radius: 1rem;
-  background: rgb(0 239 255);
-  background: linear-gradient(0deg, rgb(0 239 255) 40%, #4e54c8 100%);
-  box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
+  background: rgb(93, 221, 180);
+  background: linear-gradient(0deg, rgb(0, 239, 12) 40%, #4e54c8 100%);
+  box-shadow: 0 0 20px 20px rgba(139, 71, 217, 0.1);
   
   transition: .25s;
 }
@@ -64,7 +68,8 @@ header {
 h1 {
   margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
   
-  color: rgb(0 239 255); /* De tekst kleur wordt in rgb() bepaald. */
+  color: rgb(156, 252, 231); /* De tekst kleur wordt in rgb() bepaald. */
+  font-family: "Georgia";
 }
 
 /* Class */
@@ -72,7 +77,8 @@ h1 {
 /* Om een element met class te selecteren gebruik je een . in de selector */
 .slogan {
   font-size:1.25em;
-  color:#030711;
+  color:#8dfff9;
+  font-family: "Georgia";
 }
 
 /* BUTTON */
@@ -88,7 +94,7 @@ button {
   
   border: none;
   border-radius: 50%; /* De border-radius geeft de <button> ronde hoekjes. */
-  background: rgb(0 239 255);
+  background: rgb(35, 235, 208);
   
   scale:.8;
   
@@ -99,12 +105,12 @@ button {
 /* :hover is een 'Pseudo-class selector', daarmee worden interacties op het element gestyled. */
 button:hover {
   cursor: pointer;
-  background: darkgoldenrod;
+  background: rgb(255, 205, 143);
 }
 /* Met de 'Pseudo-class selector' :focus kan je bepalen hoe het element er uit moet zien als de tab toets op het toetsenbord wordt gebruikt. */
 button:focus {
   outline: none;
-  background: darkgoldenrod;
+  background: rgb(255, 205, 143);
 }
 
 /* In het <button> element staat een <svg> voor het icoon. */
@@ -116,12 +122,12 @@ button svg {
   
   stroke: #4e54c8;
   
-  transition: .25s;
+  transition: 0.25s;
   transition-delay: .25s; /* Een transitie op het <svg> element begin 0.25 seconde later. */
 }
 /* Met een komma wordt in een keer de styling op de :hover en de :focus van het <svg> element bepaald. */
 button:hover svg, button:focus svg {
-  stroke: lightyellow;
+  stroke: rgb(255, 252, 239);
 }
 /* Met de 'Pseudo-class selector' :nth-of-type() wordt een element geselecteerd op basis van de volgorde. */
 /* Hier wordt het tweede <svg> element in de button geselecteerd. */
@@ -147,6 +153,20 @@ img {
   transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
 }
 
+.mainimg {
+  position: relative;
+  top: 2rem;
+  
+  width: 10em;
+  height: auto;
+  
+  border: 5px solid #ffffff;
+  border-radius: 10em;
+  box-shadow: 0 0 2px 2px rgba(197, 56, 232, 0.2);
+  
+  transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
+}
+
 /* DL, DT, DD  */
 /* De eigenschappen zijn in de HTML opgemaakt in een Description List element (DL) */
 /* De Description List element (DL) is een lijst met termen en beschrijvingen. */
@@ -168,7 +188,7 @@ dl {
   padding: 5rem 0 3rem;
   
   text-align: center;
-  background: rgb(255 255 255);
+  background: rgb(242, 255, 253);
 
   dt {
     margin-top: .25rem;
@@ -249,3 +269,16 @@ body.is-expanded dl dd {
 body.is-expanded img {
   width: 15em;
 }
+
+/*.link1 {
+  position: absolute;
+  margin-left: -50%;
+  margin-top: 60%;
+  width: 30%;
+} */
+
+/*.botwlink {
+position: absolute;
+margin-left: 50%;
+width: 10%;
+} */
