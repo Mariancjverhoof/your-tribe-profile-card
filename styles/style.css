@@ -8,6 +8,9 @@
 
 html {
   background:lightyellow;
+  
+  
+  
 }
 
 /* BODY */
@@ -15,17 +18,25 @@ html {
 /* In de <body> wordt de inhoud met "display: flex" in het midden geplaats. */
 /* En krijgt de <body> en alle inhoud een font en kleur. */
 body {
-  background-image: url("../assets/hyrule-grass.gif");
-  background-size: 100% auto;
+  
+  background-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   
   height: 100vh;
+
+  background-image: url("../assets/hyrule-grass.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   
   font-family: "Gill Sans";
   color: #422661; /* de tekst kleur wordt in hex kleuren bepaald. */
   margin: 0;
+
+  perspective: 500px;
 }
 
 
@@ -43,12 +54,12 @@ article {
   justify-content: end;
   
   width: 50vw;
-  max-width: 25em;
+  max-width: 30em;
   min-width: 20em;
   
   border-radius: 1rem;
-  background: rgb(93, 221, 180);
-  background: linear-gradient(0deg, rgb(0, 239, 12) 40%, #4e54c8 100%);
+  background: rgb(93, 204, 221);
+  background: linear-gradient(0deg, rgb(0, 239, 115) 40%, #4e54c8 100%);
   box-shadow: 0 0 20px 20px rgba(139, 71, 217, 0.1);
   
   transition: .25s;
@@ -68,7 +79,7 @@ header {
 h1 {
   margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
   
-  color: rgb(156, 252, 231); /* De tekst kleur wordt in rgb() bepaald. */
+  color: rgb(255, 255, 255); /* De tekst kleur wordt in rgb() bepaald. */
   font-family: "Georgia";
 }
 
@@ -143,7 +154,7 @@ img {
   position: relative;
   top: 2rem;
   
-  width: 10em;
+  width: 8em;
   height: auto;
   
   border: 5px solid #fff;
@@ -153,19 +164,10 @@ img {
   transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
 }
 
-.mainimg {
-  position: relative;
-  top: 2rem;
-  
-  width: 10em;
-  height: auto;
-  
-  border: 5px solid #ffffff;
-  border-radius: 10em;
-  box-shadow: 0 0 2px 2px rgba(197, 56, 232, 0.2);
-  
-  transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
+.skullkid{
+  width: 20em;
 }
+
 
 /* DL, DT, DD  */
 /* De eigenschappen zijn in de HTML opgemaakt in een Description List element (DL) */
@@ -174,12 +176,13 @@ img {
 
 dl {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 30%));
   grid-template-areas:
     "html-dd css-dd js-dd"
     "html-dt css-dt js-dt"
     ;
   justify-items: center;
+  justify-content: center;
   align-items: start;
   
   width: 100%;
@@ -196,6 +199,7 @@ dl {
     
     border-top: 1px solid rgb(0 0 0 / 0.3);
     font-weight: bold;
+    font-family: "Georgia";
     
     &:nth-of-type(1) {
       grid-area: html-dt;
@@ -215,6 +219,7 @@ dl {
     margin: 0;
     padding-left: .3rem;
     
+    
     transition: .25s .3s;
     
     &:nth-of-type(2) {
@@ -227,6 +232,7 @@ dl {
 /* Hier krijgen alle <p> elementen een styling. */
 p {
   margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Om alleen de <p> elementen te stylen die in het <article> staat gebruik je de > de 'Child combinator selector'.
@@ -240,6 +246,14 @@ article > p {
   background: rgb(255 255 255 / 0.5);
   border-radius: 0 0 1rem 1rem;
   text-align: center;
+
+  font-size: 1.2em;
+  color: #c4fffb;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+
+  background:linear-gradient(rgb(2, 154, 148),rgb(36, 55, 161));
+  
 }
 
 /* Deze styles zijn van toepassing als op de knop wordt geklikt */
@@ -250,6 +264,7 @@ body.is-expanded {
 body.is-expanded article {
   width: 60vw;
   max-width: 60vw;
+  
 }
 
 body.is-expanded button svg:first-of-type {
@@ -270,15 +285,16 @@ body.is-expanded img {
   width: 15em;
 }
 
-.link1 {
-  position: absolute;
-  margin-left: -50%;
-  margin-top: 60%;
-  width: 30%;
-} 
+header.img{
+  position: relative;
+}
 
-/*.botwlink {
-position: absolute;
-margin-left: 50%;
-width: 10%;
-} */
+img:hover{
+  
+  width: 150%;
+  
+}
+
+article:hover{
+  transform:rotateY(-15deg);
+}
